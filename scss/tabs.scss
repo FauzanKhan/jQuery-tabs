@@ -1,0 +1,103 @@
+$border-gray: #DEDEDE;
+$link-blue: #007FD3;
+$bg-body: #F5F5F5;
+$white: #FFF;
+$bg-tab-content: #FAFAFA;
+@mixin transition($props: all, $timing: 200ms, $easing: ease){
+	-webkit-transition: $props $timing $easing; 
+	-moz-transition: $props $timing $easing; 
+	-ms-transition: $props $timing $easing; 
+	-o-transition: $props $timing $easing; 
+	transition: $props $timing $easing; 
+}
+.tabs-wrapper{
+	@include transition;
+	select.tab-nav{
+		display: none;
+	} 
+	ul.tab-nav{
+		list-style: none;
+		display: block;
+		border-bottom: 1px solid $border-gray;
+		margin: 0px;
+		padding: 0px 30px;
+		li{
+			display: inline-block;
+			margin-right: 5px;
+			a{
+				text-decoration: none;
+				color: $link-blue;
+				padding: 12px 20px;
+				border: 1px solid $border-gray;
+				border-bottom-width: 1px solid transparent;
+				display: block;
+				border-radius: 2px 2px 0px 0px;
+				margin-bottom: -1px;
+				@include transition;
+			}
+			&.active{
+				a{
+					border-bottom: 1px solid $bg-tab-content;
+					background: $bg-tab-content;
+				}
+			}
+			&:hover a{
+				background: $bg-tab-content;
+			}
+		}
+	}
+	.target-tabs{
+		background: $bg-tab-content;
+		border: 1px solid $border-gray;
+		border-top-width: 0px;
+		border-radius: 2px;
+		overflow: hidden;
+		position: relative;
+		.tab-content{
+			display: none;
+			padding: 30px;
+			@include transition;
+			.tab-heading{
+				.tab-no{
+					font-size: 28px;
+					font-weight: light;
+				}
+			}
+			p{
+				line-height: 24px;
+				word-spacing: 1px;
+			}
+			&.active{
+				display: block;
+			}
+			&.inactive{
+			position: absolute;
+			}
+			a{
+				color: $link-blue;
+				text-decoration: none;
+			}
+		}
+	}
+}
+@media screen and (max-width: 640px) { 
+    .tabs-wrapper{
+    	ul.tab-nav{
+    		display: none;
+    	}
+    	select.tab-nav{
+    		width: 100%;
+			padding: 15px;
+			background: $white;
+			border: 1px solid $border-gray;
+			border-radius: 2px 2px 0px 0px;
+			display: block;
+			&:focus{
+				outline: none;
+			}
+    	}
+    	.target-tabs{
+    		border-radius: 0px 0px 2px 2px;
+    	}
+    }
+} 
