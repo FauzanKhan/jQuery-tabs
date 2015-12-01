@@ -1,5 +1,5 @@
 ;(function($){
-	$.fn.tab = function(options){
+	$.fn.tabs = function(options){
 		var settings = $.extend({
 			enterAnimation: 'fadeIn',
 			exitAnimation: 'fadeOut'
@@ -34,9 +34,7 @@
 			targetTab.removeClass('animated '+settings.exitAnimation);		
 			//Perform animation on desktop only
 			if(windowWidth > 640 && !initialize){
-				debugger;
 				currActiveTab.addClass('animated '+settings.exitAnimation).one('webkitAnimationEnd oanimationend oAnimationEnd msTransitionEnd animationend', function(){
-					debugger;
 					currActiveTab.removeClass('active');
 					targetTab.addClass('active').addClass('animated '+settings.enterAnimation);
 					currActiveTabBtn.removeClass('active');
