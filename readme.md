@@ -2,10 +2,17 @@
 A simple jQuery plugin for responsive tabs.
 
 ### Description
+<<<<<<< HEAD
  - Tabs separate mutually exclusive content. Only one tab is active at a time and therefore only the content related to the active tab is visible at any given time.
 - On mobile, the tabs should become <select> drop down.
 - The drop-down carry all the states from the tabs and vice versa.
 - You can cofigure the enter and exit animations for tab content.
+=======
+ * Tabs separate mutually exclusive content. Only one tab is active at a time and therefore only the content related to the active tab is visible at any given time.
+* On mobile, the tabs becomes ```<select>``` drop down.
+* The drop-down carry all the states from the tabs and vice versa.
+* You can cofigure the enter and exit animations for tab content.
+>>>>>>> gh-pages
 
 ### Usage
 The plugin converts the following markup into tabs -
@@ -46,7 +53,7 @@ You can initialize the plugin by adding the following line to your script
 - You can provide animate.css classes or your own CSS classes for showing and hiding tabs with cool effects.
 - Example code for configuring the plugin
 ```javascript
-    $('.tabs-wrapper').tab({
+    $('.tabs-wrapper').tabs({
 		enterAnimation: 'slideInDown',
 		exitAnimation: 'slideOutDown'
 	});
